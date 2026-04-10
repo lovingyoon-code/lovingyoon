@@ -1,0 +1,290 @@
+/* 
+  Kim Yunju Portfolio Website
+  Inspired by Aja Frost's minimal & typographic design
+*/
+
+:root {
+  /* Colors */
+  --bg-color: #FCFBF8; /* Off-white/cream */
+  --text-color: #111111; /* Almost black */
+  --text-light: #555555; /* Dark gray for subtext */
+  --accent-color: #000000;
+  
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Layout */
+  --container-width: 1000px;
+  --spacing-lg: 120px;
+  --spacing-md: 80px;
+  --spacing-sm: 40px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.6;
+}
+
+/* Layout Utilities */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/* Header & Navigation */
+.site-header {
+  padding: var(--spacing-sm) 0;
+  position: sticky;
+  top: 0;
+  background-color: rgba(252, 251, 248, 0.95);
+  backdrop-filter: blur(5px);
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: -0.5px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.main-nav a {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Section Common */
+section {
+  padding: var(--spacing-lg) 0;
+}
+
+.section-header {
+  margin-bottom: var(--spacing-sm);
+}
+
+.section-header h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.divider {
+  width: 50px;
+  height: 1px;
+  background-color: var(--text-color);
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  min-height: 70vh;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  line-height: 1.1;
+  font-weight: 400;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 6rem;
+  }
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero-image-placeholder {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.placeholder-box {
+  width: 300px;
+  height: 400px;
+  background-color: #EAE8E0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--text-light);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  border-radius: 4px;
+  border: 1px dashed #cccccc;
+}
+
+.profile-img {
+  width: 100%;
+  max-width: 400px;
+  max-height: 500px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+/* About Section */
+.about-text {
+  font-size: 1.25rem;
+  max-width: 700px;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+/* Portfolio Section */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.portfolio-item {
+  display: block;
+  padding: 30px 20px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.portfolio-item:hover {
+  opacity: 1;
+  transform: translateY(-5px);
+  background-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.item-category {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-light);
+  margin-bottom: 10px;
+}
+
+.item-title {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.item-desc {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* Footer Section */
+.site-footer {
+  padding: var(--spacing-lg) 0 var(--spacing-sm);
+  background-color: #ffffff;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.footer-contact h2 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.email-link {
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--text-color);
+  padding-bottom: 5px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.email-link:hover {
+  color: var(--text-light);
+  border-color: var(--text-light);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 20px;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}

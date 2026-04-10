@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kim Yunju | Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#" class="logo">KY.</a>
+            <nav class="main-nav">
+                <a href="#about">About</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero container">
+            <div class="hero-content">
+                <h1 class="hero-title">Kim<br>Yunju</h1>
+                <p class="hero-subtitle">Creative Director & Content Creator</p>
+            </div>
+            <div class="hero-image-placeholder">
+                <img src="profile.jpg" alt="Kim Yunju Profile" class="profile-img">
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about container">
+            <div class="section-header">
+                <h2>About Me.</h2>
+                <div class="divider"></div>
+            </div>
+            <p class="about-text">
+                안녕하세요! 창의적인 콘텐츠로 세상과 소통하는 김윤주입니다. 
+                영상을 기획하고, 글을 쓰며, 다양한 SNS 채널을 통해 저만의 색깔을 만들어가고 있습니다. 
+                단순한 정보 전달을 넘어 사람들의 마음에 닿는 울림을 주는 콘텐츠를 만드는 것이 저의 목표입니다.
+            </p>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio container">
+            <div class="section-header">
+                <h2>My Work.</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="portfolio-grid">
+                <!-- Video Link Placeholder -->
+                <a href="https://www.youtube.com/@true8490" class="portfolio-item" target="_blank" rel="noopener noreferrer">
+                    <div class="item-category">Video</div>
+                    <h3 class="item-title">YouTube Channel</h3>
+                    <p class="item-desc">기획부터 편집까지, 일상을 담은 브이로그 및 기획 콘텐츠 모음입니다.</p>
+                </a>
+                
+                <!-- Writing Link Placeholder -->
+                <a href="https://blog.naver.com/true8490" class="portfolio-item" target="_blank" rel="noopener noreferrer">
+                    <div class="item-category">Writing</div>
+                    <h3 class="item-title">Blog</h3>
+                    <p class="item-desc">일상의 단상, 영감을 주는 생각들, 그리고 전문적인 아티클을 기록합니다.</p>
+                </a>
+
+                <!-- SNS Link Placeholder -->
+                <a href="#" class="portfolio-item">
+                    <div class="item-category">Social</div>
+                    <h3 class="item-title">Instagram</h3>
+                    <p class="item-desc">시각적인 영감과 빠르고 트렌디한 소통의 창구입니다.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-contact">
+                <h2>Let's Connect.</h2>
+                <a href="mailto:your.email@example.com" class="email-link">your.email@example.com</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Kim Yunju. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
