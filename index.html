@@ -7,31 +7,44 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="site-header">
         <div class="container header-inner">
-            <a href="#" class="logo">KY.</a>
+            <a href="#" class="logo">KYJ</a>
             <nav class="main-nav">
                 <a href="#about">About</a>
-                <a href="#portfolio">Portfolio</a>
+                <a href="#portfolio">Channels</a>
+                <a href="#videos">Videos</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
 
     <main>
+        <!-- Video Portfolio Section -->
+        <section id="videos" class="videos">
+            <div class="video-exhibition" id="slider">
+                <!-- 슬라이드될 5개의 이미지 -->
+                <div class="slide active" style="background-image: url('slide1.jpg.jpg'); filter: contrast(1.2) brightness(1.1);"></div>
+                <div class="slide" style="background-image: url('slide2.jpg.jpg'); background-size: cover; background-position: center 40%;"></div>
+                <div class="slide" style="background-image: url('slide3.jpg.jpg');"></div>
+                <div class="slide" style="background-image: url('slide4.jpg.jpg');"></div>
+                <div class="slide" style="background-image: url('slide5.jpg.jpg');"></div>
+            </div>
+        </section>
+
         <!-- Hero Section -->
         <section class="hero container">
             <div class="hero-content">
                 <h1 class="hero-title">Kim<br>Yunju</h1>
                 <p class="hero-subtitle">Creative Director & Content Creator</p>
             </div>
-            <div class="hero-image-placeholder">
-                <img src="profile.jpg" alt="Kim Yunju Profile" class="profile-img">
+            <div class="hero-image-wrapper">
+                <img src="profile.jpg" alt="Kim Yunju Profile" class="hero-img">
             </div>
         </section>
 
@@ -48,32 +61,57 @@
             </p>
         </section>
 
-        <!-- Portfolio Section -->
+        <!-- Portfolio (Channels) Section -->
         <section id="portfolio" class="portfolio container">
             <div class="section-header">
-                <h2>My Work.</h2>
+                <h2>Channels.</h2>
                 <div class="divider"></div>
             </div>
             <div class="portfolio-grid">
-                <!-- Video Link Placeholder -->
-                <a href="https://www.youtube.com/@true8490" class="portfolio-item" target="_blank" rel="noopener noreferrer">
+                <!-- Video Link -->
+                <a href="https://www.youtube.com/@true8490" class="portfolio-item item-youtube" target="_blank" rel="noopener noreferrer">
                     <div class="item-category">Video</div>
-                    <h3 class="item-title">YouTube Channel</h3>
+                    <h3 class="item-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#E53935" style="vertical-align: middle; margin-right: 8px;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.1 0 12 0 12s0 3.9.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.376.55 9.376.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.9 24 12 24 12s0-3.9-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> YouTube
+                    </h3>
                     <p class="item-desc">기획부터 편집까지, 일상을 담은 브이로그 및 기획 콘텐츠 모음입니다.</p>
                 </a>
                 
-                <!-- Writing Link Placeholder -->
-                <a href="https://blog.naver.com/true8490" class="portfolio-item" target="_blank" rel="noopener noreferrer">
+                <!-- Writing Link -->
+                <a href="https://blog.naver.com/true8490" class="portfolio-item item-blog" target="_blank" rel="noopener noreferrer">
                     <div class="item-category">Writing</div>
-                    <h3 class="item-title">Blog</h3>
+                    <h3 class="item-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#03C75A" style="vertical-align: middle; margin-right: 8px;"><path d="M16.8 0H7.2C3.224 0 0 3.224 0 7.2v9.6C0 20.776 3.224 24 7.2 24h9.6c3.976 0 7.2-3.224 7.2-7.2V7.2C24 3.224 20.776 0 16.8 0zm-1.68 16.8h-3.6V10.2l-3.36 6.6H5.4V7.2h3.6v6.6l3.36-6.6h2.76v9.6z"/></svg> Blog
+                    </h3>
                     <p class="item-desc">일상의 단상, 영감을 주는 생각들, 그리고 전문적인 아티클을 기록합니다.</p>
                 </a>
 
-                <!-- SNS Link Placeholder -->
-                <a href="https://www.instagram.com/yunju5491?igsh=ZXkxYmQ4MjF6YTZo" class="portfolio-item" target="_blank" rel="noopener noreferrer">
+                <!-- SNS Link -->
+                <a href="https://www.instagram.com/yunju5491?igsh=ZXkxYmQ4MjF6YTZo" class="portfolio-item item-instagram" target="_blank" rel="noopener noreferrer">
                     <div class="item-category">Social</div>
-                    <h3 class="item-title">Instagram</h3>
+                    <h3 class="item-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D81B60" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 8px;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg> Instagram
+                    </h3>
                     <p class="item-desc">시각적인 영감과 빠르고 트렌디한 소통의 창구입니다.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Portfolio Links Section -->
+        <section id="portfolio-links" class="portfolio-links container">
+            <div class="section-header">
+                <h2>Portfolio Links.</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="links-wrap">
+                <!-- 포트폴리오 링크 삽입 공간 -->
+                <a href="#" class="portfolio-link-item" target="_blank" rel="noopener noreferrer">
+                    <span class="link-label">Project Name 1</span>
+                    <span class="link-url">View Project &rarr;</span>
+                </a>
+                <a href="#" class="portfolio-link-item" target="_blank" rel="noopener noreferrer">
+                    <span class="link-label">Project Name 2</span>
+                    <span class="link-url">View Project &rarr;</span>
                 </a>
             </div>
         </section>
@@ -93,6 +131,21 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 자동 이미지 슬라이더 (페이드 효과)
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showNextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // 3.5초마다 다음 이미지로 넘어가기
+        if(slides.length > 0) {
+            setInterval(showNextSlide, 3500);
+        }
     </script>
 </body>
 </html>

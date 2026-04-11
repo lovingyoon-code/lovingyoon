@@ -1,15 +1,22 @@
 /* 
   Kim Yunju Portfolio Website
-  Inspired by Aja Frost's minimal & typographic design
 */
 
 :root {
   /* Colors */
   --bg-color: #FCFBF8; /* Off-white/cream */
   --text-color: #111111; /* Almost black */
-  --text-light: #555555; /* Dark gray for subtext */
+  --text-light: #555555; /* Dark gray */
   --accent-color: #000000;
   
+  /* Brand */
+  --youtube-color: #E53935;
+  --youtube-light: #FEEEEE;
+  --blog-color: #03C75A;
+  --blog-light: #E6FAEE;
+  --instagram-color: #D81B60;
+  --instagram-light: #FBEAF0;
+
   /* Typography */
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Inter', sans-serif;
@@ -60,7 +67,7 @@ a:hover {
 
 /* Header & Navigation */
 .site-header {
-  padding: var(--spacing-sm) 0;
+  padding: 30px 0;
   position: sticky;
   top: 0;
   background-color: rgba(252, 251, 248, 0.95);
@@ -76,7 +83,7 @@ a:hover {
 
 .logo {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 600;
   font-style: italic;
   letter-spacing: -0.5px;
@@ -89,14 +96,15 @@ a:hover {
 
 .main-nav a {
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  font-weight: 500;
 }
 
 /* Section Common */
 section {
-  padding: var(--spacing-lg) 0;
+  padding: var(--spacing-sm) 0;
 }
 
 .section-header {
@@ -105,7 +113,7 @@ section {
 
 .section-header h2 {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 400;
   margin-bottom: 20px;
 }
@@ -113,16 +121,17 @@ section {
 .divider {
   width: 50px;
   height: 1px;
-  background-color: var(--text-color);
+  background-color: #333;
 }
 
 /* Hero Section */
 .hero {
   display: flex;
-  flex-direction: column-reverse;
-  align-items: flex-start;
-  min-height: 70vh;
-  justify-content: center;
+  flex-direction: column-reverse; /* 모바일에서는 텍스트가 아래로 가거나, 취향에 따라 조정 */
+  align-items: center;
+  text-align: center;
+  padding-top: var(--spacing-md);
+  padding-bottom: var(--spacing-lg);
   gap: var(--spacing-sm);
 }
 
@@ -130,6 +139,7 @@ section {
   .hero {
     flex-direction: row;
     align-items: center;
+    text-align: left;
     justify-content: space-between;
   }
 }
@@ -140,74 +150,73 @@ section {
 
 .hero-title {
   font-family: var(--font-heading);
-  font-size: 4rem;
+  font-size: 5rem;
   line-height: 1.1;
   font-weight: 400;
   margin-bottom: 20px;
-  letter-spacing: -1px;
+  letter-spacing: -1.5px;
 }
 
 @media (min-width: 768px) {
   .hero-title {
-    font-size: 6rem;
+    font-size: 7rem;
   }
 }
 
 .hero-subtitle {
   font-family: var(--font-body);
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--text-light);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  font-weight: 500;
 }
 
-.hero-image-placeholder {
+.hero-image-wrapper {
   flex: 1;
   width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
 }
 
-.placeholder-box {
-  width: 300px;
-  height: 400px;
-  background-color: #EAE8E0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: var(--text-light);
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  border-radius: 4px;
-  border: 1px dashed #cccccc;
+@media (min-width: 768px) {
+  .hero-image-wrapper {
+    margin: 0;
+  }
 }
 
-.profile-img {
+.hero-img {
   width: 100%;
-  max-width: 400px;
-  max-height: 500px;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  display: block;
 }
 
 /* About Section */
+.about {
+  padding-bottom: var(--spacing-md);
+}
+
 .about-text {
-  font-size: 1.25rem;
-  max-width: 700px;
+  font-size: 1.1rem;
+  max-width: 750px;
   line-height: 1.8;
   color: var(--text-light);
 }
 
-/* Portfolio Section */
+/* Portfolio Section (Channels) */
+.portfolio {
+  padding-bottom: var(--spacing-lg);
+}
+
 .portfolio-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 40px;
-  margin-top: 40px;
+  gap: 30px;
+  margin-top: 20px;
 }
 
 @media (min-width: 768px) {
@@ -218,37 +227,177 @@ section {
 
 .portfolio-item {
   display: block;
-  padding: 30px 20px;
-  border-top: 1px solid rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  padding: 40px 30px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.portfolio-item > * {
+  position: relative;
+  z-index: 2;
+}
+
+.portfolio-item::before {
+  content: "";
+  position: absolute;
+  top: -10px; left: -10px; right: -10px; bottom: -10px; /* 약간 넓혀서 가장자리 블러 퍼짐 방지 */
+  background-size: cover;
+  background-position: center;
+  filter: blur(2.5px) opacity(0.3) contrast(1.1); /* 평상시에도 형태가 잘 보이도록 흐림과 투명도 조절 */
+  z-index: -1;
+  transition: all 0.3s ease;
 }
 
 .portfolio-item:hover {
   opacity: 1;
   transform: translateY(-5px);
-  background-color: #ffffff;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.04);
+}
+
+.portfolio-item:hover::before {
+  filter: blur(1px) opacity(0.5) contrast(1.1); /* 마우스 오버 시 더 또렷하고 밝아짐 */
+}
+
+/* Specific Card Styles based on image */
+.item-youtube {
+  border: 2px solid var(--youtube-light);
+}
+.item-youtube::before {
+  background-image: url('box_youtube.jpg.png');
+}
+.item-youtube .item-category {
+  color: var(--text-light);
+}
+
+.item-blog {
+  border: 2px solid var(--blog-light);
+}
+.item-blog::before {
+  background-image: url('box_blog.jpg.jpg');
+}
+
+.item-instagram {
+  border: 2px solid var(--instagram-light);
+}
+.item-instagram::before {
+  background-image: url('box_instagram.jpg.jpg');
 }
 
 .item-category {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   color: var(--text-light);
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  font-weight: 600;
 }
 
 .item-title {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
-  font-weight: 400;
-  margin-bottom: 15px;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .item-desc {
   font-size: 0.95rem;
   color: var(--text-light);
-  line-height: 1.5;
+  line-height: 1.6;
+}
+
+/* Portfolio Links Section */
+.portfolio-links {
+  padding-bottom: var(--spacing-lg);
+}
+
+.links-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 100%;
+}
+
+.portfolio-link-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.portfolio-link-item:hover {
+  border-color: var(--text-color);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+  transform: translateY(-3px);
+  opacity: 1;
+}
+
+.link-label {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.link-url {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* Video Exhibition Section */
+.videos {
+  padding: 0;
+  background-color: #000;
+}
+
+.video-exhibition {
+  width: 100%;
+  height: 95vh; /* Increased from 85vh to add roughly 2cm+ of height */
+  min-height: 600px; /* Increased base height */
+  background-color: #111;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 40px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.overlay-text {
+  position: relative;
+  z-index: 10;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  letter-spacing: 1px;
 }
 
 /* Footer Section */
@@ -265,13 +414,15 @@ section {
 
 .footer-contact h2 {
   font-family: var(--font-heading);
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 400;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .email-link {
+  font-family: var(--font-body);
   font-size: 1.5rem;
+  color: var(--text-color);
   border-bottom: 1px solid var(--text-color);
   padding-bottom: 5px;
   transition: color 0.3s ease, border-color 0.3s ease;
@@ -284,7 +435,7 @@ section {
 
 .footer-bottom {
   border-top: 1px solid rgba(0,0,0,0.1);
-  padding-top: 20px;
-  font-size: 0.85rem;
+  padding-top: 30px;
+  font-size: 0.9rem;
   color: var(--text-light);
 }
